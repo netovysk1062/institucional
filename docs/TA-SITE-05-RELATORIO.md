@@ -13,7 +13,7 @@
 - O tema efetivo é aplicado em `data-theme` no elemento `<html>`.
 - A preferência fica em `localStorage` na chave `traders-automatizados-theme`. A ausência da chave representa **Automático**; os valores `light` e `dark` representam escolhas manuais.
 - Um inicializador síncrono no `<head>` lê a preferência antes do CSS. Em Automático, consulta `prefers-color-scheme`; um listener `matchMedia` acompanha mudanças do sistema sem recarregar a página.
-- O controle nativo do Header oferece **Automático**, **Claro** e **Escuro**. Ele atualiza ao navegar e também aparece no menu mobile.
+- O Header exibe um controle compacto com ícone e rótulo do modo atual: monitor para **Automático**, sol para **Claro** e lua para **Escuro**. Ao abrir o controle, os três modos ficam disponíveis em botões acessíveis; no mobile, ele aparece dentro do menu.
 - Ao escolher Automático, a chave é removida. Ao escolher Claro ou Escuro, a preferência é salva.
 - A preferência manual e os eventos de teclado foram verificados após navegação e recarga.
 - A implementação usa Astro, TypeScript e CSS existentes. Nenhuma biblioteca de estado ou dependência do projeto foi adicionada.
@@ -36,7 +36,7 @@ Gradientes e superfícies semânticas cobrem Header, hero, diagrama do ecossiste
 ## 3. Arquivos e componentes alterados
 
 - `src/layouts/SiteLayout.astro`: inicialização antecipada, acompanhamento da preferência do sistema e atualização de `theme-color` e `color-scheme`.
-- `src/components/Header.astro`: seletor acessível de preferência de tema no desktop e no menu mobile.
+- `src/components/Header.astro`: botão compacto com ícone e menu acessível de preferência de tema no desktop e no menu mobile.
 - `src/styles/global.css`: tokens semânticos, variação Light Premium e ajustes de contraste para gráficos SVG, preservando os valores escuros originais.
 - `render.yaml`: hashes SHA-256 da CSP alinhados aos scripts inline produzidos pelo build.
 - `docs/TA-SITE-05-Capturas/`: capturas comparativas e relatórios de auditoria.
@@ -63,6 +63,8 @@ Capturas adicionais da Home em alta resolução:
 - [Home Dark — desktop](./TA-SITE-05-Capturas/home-dark-desktop.png)
 - [Home Light — mobile](./TA-SITE-05-Capturas/home-light-mobile.png)
 - [Home Dark — mobile](./TA-SITE-05-Capturas/home-dark-mobile.png)
+- [Controle de tema Light — menu mobile](./TA-SITE-05-Capturas/theme-control-light-mobile.png)
+- [Controle de tema Dark — menu mobile](./TA-SITE-05-Capturas/theme-control-dark-mobile.png)
 
 ## 5. Playwright e acessibilidade
 
@@ -70,8 +72,8 @@ Capturas adicionais da Home em alta resolução:
 
 - 14 verificações axe: seis páginas institucionais e página 404, em Light e Dark; **zero violações WCAG 2.1 A/AA**.
 - 35 verificações responsivas: sete rotas em 320, 375, 768, 1024 e 1440 px; **zero overflow horizontal**.
-- Confirmados: primeira visita seguindo o sistema, escolha manual Light/Dark, limpeza da preferência ao voltar para Automático, acompanhamento de mudança de tema durante a sessão, persistência após recarga e entre páginas, e seletor operável por teclado.
-- Menu mobile: abertura, visibilidade do seletor, fechamento com Escape e retorno do foco ao botão foram aprovados.
+- Confirmados: primeira visita seguindo o sistema, escolha manual Light/Dark, limpeza da preferência ao voltar para Automático, acompanhamento de mudança de tema durante a sessão, persistência após recarga e entre páginas, e abertura/seleção do controle por teclado.
+- Menu mobile: abertura, visibilidade do controle com ícone e rótulo, opções de tema e Escape em duas etapas (fecha primeiro as opções e depois o menu), com retorno do foco ao botão, foram aprovados.
 - O tema ficou aplicado antes de a folha CSS terminar de carregar em um teste com atraso artificial dos estilos; não foi observado flash de tema incorreto.
 - Console do navegador, erros de página e eventos de violação CSP: sem registros.
 - `prefers-reduced-motion: reduce`: confirmado; `scroll-behavior` computado como `auto` e transição reduzida.
@@ -84,10 +86,10 @@ Lighthouse foi executado na Home em desktop e mobile, com a preferência Light o
 
 | Tema | Dispositivo | Performance | Acessibilidade | Boas práticas | SEO | FCP | LCP | CLS | TBT |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|
-| Light | Desktop | 100 | 100 | 100 | 100 | 0,3 s | 0,3 s | 0,010 | 0 ms |
-| Dark | Desktop | 100 | 100 | 100 | 100 | 0,3 s | 0,3 s | 0,013 | 0 ms |
-| Light | Mobile | 100 | 100 | 100 | 100 | 1,1 s | 1,1 s | 0 | 40 ms |
-| Dark | Mobile | 100 | 100 | 100 | 100 | 1,1 s | 1,1 s | 0,044 | 40 ms |
+| Light | Desktop | 100 | 100 | 100 | 100 | 0,3 s | 0,3 s | 0 | 0 ms |
+| Dark | Desktop | 100 | 100 | 100 | 100 | 0,3 s | 0,3 s | 0 | 0 ms |
+| Light | Mobile | 100 | 100 | 100 | 100 | 1,1 s | 1,1 s | 0 | 50 ms |
+| Dark | Mobile | 100 | 100 | 100 | 100 | 1,1 s | 1,1 s | 0 | 50 ms |
 
 Relatórios JSON completos: [Light desktop](./TA-SITE-05-Capturas/lighthouse-light-desktop-verified.json), [Dark desktop](./TA-SITE-05-Capturas/lighthouse-dark-desktop-verified.json), [Light mobile](./TA-SITE-05-Capturas/lighthouse-light-mobile-verified.json) e [Dark mobile](./TA-SITE-05-Capturas/lighthouse-dark-mobile-verified.json).
 
@@ -97,7 +99,7 @@ As pontuações das quatro categorias foram 100 nas quatro coletas. A análise d
 
 - O servidor local de homologação aplicou os valores de `Content-Security-Policy` definidos em `render.yaml`.
 - Os 14 scripts executáveis inline gerados nas sete rotas foram comparados aos hashes CSP. Os dois hashes necessários estão presentes em todas as páginas:
-  - `sha256-yw/XvWbekdIeweL+K7vItPoiUIT6Vgvs3b2aNH0bnM8=` — inicializador de tema.
+  - `sha256-dP0Pvb5iJKSEvGFrvGkvmcveG6irnsLVhYv982TWlNU=` — inicializador de tema.
   - `sha256-KCp4POVSUtD/H6Jk3WHkAbqseztl9kJrIUFbQfW1yD0=` — módulo do Header.
 - `unsafe-inline` não foi adicionado. Os testes sob o cabeçalho CSP não registraram scripts ou recursos bloqueados.
 - O hash preexistente em `render.yaml` não correspondia ao módulo inline atual; foi substituído pelos hashes do inicializador de tema e do módulo do Header. Não foram incluídas credenciais ou dependências novas no projeto.

@@ -83,7 +83,20 @@ const structuredData = {
 
         const syncControl = () => {
           const control = document.getElementById("theme-preference");
-          if (control instanceof HTMLSelectElement) control.value = preference;
+          const label = document.getElementById("theme-preference-label");
+          const options = document.getElementById("theme-options");
+          if (!(control instanceof HTMLButtonElement)) return;
+
+          const labels = { auto: "Automático", light: "Claro", dark: "Escuro" };
+          const effectiveTheme = preference === "auto" ? (systemTheme.matches ? "dark" : "light") : preference;
+          control.dataset.preference = preference;
+          control.dataset.effectiveTheme = effectiveTheme;
+          control.setAttribute("aria-label", `Tema atual: ${labels[preference]}. Abrir opções de tema`);
+          if (label) label.textContent = labels[preference];
+
+          options?.querySelectorAll("button[data-theme-value]").forEach((option) => {
+            option.setAttribute("aria-pressed", String(option.dataset.themeValue === preference));
+          });
         };
 
         const applyTheme = () => {
@@ -127,12 +140,52 @@ const structuredData = {
 
         document.addEventListener("DOMContentLoaded", () => {
           const control = document.getElementById("theme-preference");
-          if (!(control instanceof HTMLSelectElement)) return;
+          const container = document.getElementById("theme-control");
+          const options = document.getElementById("theme-options");
+          if (!(control instanceof HTMLButtonElement) || !(container instanceof HTMLElement) || !(options instanceof HTMLElement)) return;
           syncControl();
 
-          control.addEventListener("change", () => {
-            const selected = control.value;
+          const closeOptions = (returnFocus = false) => {
+            control.setAttribute("aria-expanded", "false");
+            options.hidden = true;
+            if (returnFocus) control.focus();
+          };
+
+          control.addEventListener("click", () => {
+            const isExpanded = control.getAttribute("aria-expanded") === "true";
+            control.setAttribute("aria-expanded", String(!isExpanded));
+            options.hidden = isExpanded;
+            if (!isExpanded) {
+              options.querySelector(`button[data-theme-value="${preference}"]`)?.focus();
+            }
+          });
+
+          options.addEventListener("click", (event) => {
+            const target = event.target;
+            const option = target instanceof Element ? target.closest("button[data-theme-value]") : null;
+            if (!(option instanceof HTMLButtonElement)) return;
+
+            const selected = option.dataset.themeValue;
             setPreference(selected === "light" || selected === "dark" ? selected : "auto");
+            closeOptions(true);
+          });
+
+          container.addEventListener("keydown", (event) => {
+            if (event.key !== "Escape" || control.getAttribute("aria-expanded") !== "true") return;
+            event.preventDefault();
+            event.stopPropagation();
+            closeOptions(true);
+          });
+
+          container.addEventListener("focusout", () => {
+            requestAnimationFrame(() => {
+              if (!container.contains(document.activeElement)) closeOptions();
+            });
+          });
+
+          document.addEventListener("pointerdown", (event) => {
+            if (control.getAttribute("aria-expanded") !== "true") return;
+            if (!(event.target instanceof Node) || !container.contains(event.target)) closeOptions();
           });
         });
       })();

@@ -1,370 +1,94 @@
 {
+  "interactions": [
+    "auto/light/dark selection, persistence, OS follow, selected icon/label, keyboard open/Escape: PASS",
+    "mobile nav + theme options, Escape dismiss sequence: PASS",
+    "theme applied before delayed stylesheet: PASS",
+    "Tema Automático exibe monitor; tema Claro exibe sol; tema Escuro exibe lua: PASS"
+  ],
   "routes": [
     {
       "route": "/",
       "scheme": "light",
-      "title": "Traders Automatizados | Engenharia que transforma ideias em tecnologia real",
-      "theme": "light"
+      "theme": "light",
+      "title": "Traders Automatizados | Engenharia que transforma ideias em tecnologia real"
     },
     {
       "route": "/",
       "scheme": "dark",
-      "title": "Traders Automatizados | Engenharia que transforma ideias em tecnologia real",
-      "theme": "dark"
+      "theme": "dark",
+      "title": "Traders Automatizados | Engenharia que transforma ideias em tecnologia real"
     },
     {
       "route": "/empresa/",
       "scheme": "light",
-      "title": "História da Traders Automatizados | Empresa",
-      "theme": "light"
+      "theme": "light",
+      "title": "História da Traders Automatizados | Empresa"
     },
     {
       "route": "/empresa/",
       "scheme": "dark",
-      "title": "História da Traders Automatizados | Empresa",
-      "theme": "dark"
+      "theme": "dark",
+      "title": "História da Traders Automatizados | Empresa"
     },
     {
       "route": "/ecossistema/",
       "scheme": "light",
-      "title": "Marcas e plataformas | Traders Automatizados",
-      "theme": "light"
+      "theme": "light",
+      "title": "Marcas e plataformas | Traders Automatizados"
     },
     {
       "route": "/ecossistema/",
       "scheme": "dark",
-      "title": "Marcas e plataformas | Traders Automatizados",
-      "theme": "dark"
+      "theme": "dark",
+      "title": "Marcas e plataformas | Traders Automatizados"
     },
     {
       "route": "/projetos/",
       "scheme": "light",
-      "title": "Produtos e plataformas | Traders Automatizados",
-      "theme": "light"
+      "theme": "light",
+      "title": "Produtos e plataformas | Traders Automatizados"
     },
     {
       "route": "/projetos/",
       "scheme": "dark",
-      "title": "Produtos e plataformas | Traders Automatizados",
-      "theme": "dark"
+      "theme": "dark",
+      "title": "Produtos e plataformas | Traders Automatizados"
     },
     {
       "route": "/engenharia/",
       "scheme": "light",
-      "title": "Processo de desenvolvimento | Traders Automatizados",
-      "theme": "light"
+      "theme": "light",
+      "title": "Processo de desenvolvimento | Traders Automatizados"
     },
     {
       "route": "/engenharia/",
       "scheme": "dark",
-      "title": "Processo de desenvolvimento | Traders Automatizados",
-      "theme": "dark"
+      "theme": "dark",
+      "title": "Processo de desenvolvimento | Traders Automatizados"
     },
     {
       "route": "/contato/",
       "scheme": "light",
-      "title": "Contato Traders Automatizados | Canais oficiais",
-      "theme": "light"
+      "theme": "light",
+      "title": "Contato Traders Automatizados | Canais oficiais"
     },
     {
       "route": "/contato/",
       "scheme": "dark",
-      "title": "Contato Traders Automatizados | Canais oficiais",
-      "theme": "dark"
+      "theme": "dark",
+      "title": "Contato Traders Automatizados | Canais oficiais"
     },
     {
       "route": "/404.html",
       "scheme": "light",
-      "title": "Página não encontrada | Traders Automatizados",
-      "theme": "light"
+      "theme": "light",
+      "title": "Página não encontrada | Traders Automatizados"
     },
     {
       "route": "/404.html",
       "scheme": "dark",
-      "title": "Página não encontrada | Traders Automatizados",
-      "theme": "dark"
-    }
-  ],
-  "responsive": [
-    {
-      "route": "/",
-      "width": 320,
-      "client": 320,
-      "scroll": 320,
-      "body": 320,
-      "overflow": false
-    },
-    {
-      "route": "/",
-      "width": 375,
-      "client": 375,
-      "scroll": 375,
-      "body": 375,
-      "overflow": false
-    },
-    {
-      "route": "/",
-      "width": 768,
-      "client": 768,
-      "scroll": 768,
-      "body": 768,
-      "overflow": false
-    },
-    {
-      "route": "/",
-      "width": 1024,
-      "client": 1024,
-      "scroll": 1024,
-      "body": 1024,
-      "overflow": false
-    },
-    {
-      "route": "/",
-      "width": 1440,
-      "client": 1440,
-      "scroll": 1440,
-      "body": 1440,
-      "overflow": false
-    },
-    {
-      "route": "/empresa/",
-      "width": 320,
-      "client": 320,
-      "scroll": 320,
-      "body": 320,
-      "overflow": false
-    },
-    {
-      "route": "/empresa/",
-      "width": 375,
-      "client": 375,
-      "scroll": 375,
-      "body": 375,
-      "overflow": false
-    },
-    {
-      "route": "/empresa/",
-      "width": 768,
-      "client": 768,
-      "scroll": 768,
-      "body": 768,
-      "overflow": false
-    },
-    {
-      "route": "/empresa/",
-      "width": 1024,
-      "client": 1024,
-      "scroll": 1024,
-      "body": 1024,
-      "overflow": false
-    },
-    {
-      "route": "/empresa/",
-      "width": 1440,
-      "client": 1440,
-      "scroll": 1440,
-      "body": 1440,
-      "overflow": false
-    },
-    {
-      "route": "/ecossistema/",
-      "width": 320,
-      "client": 320,
-      "scroll": 320,
-      "body": 320,
-      "overflow": false
-    },
-    {
-      "route": "/ecossistema/",
-      "width": 375,
-      "client": 375,
-      "scroll": 375,
-      "body": 375,
-      "overflow": false
-    },
-    {
-      "route": "/ecossistema/",
-      "width": 768,
-      "client": 768,
-      "scroll": 768,
-      "body": 768,
-      "overflow": false
-    },
-    {
-      "route": "/ecossistema/",
-      "width": 1024,
-      "client": 1024,
-      "scroll": 1024,
-      "body": 1024,
-      "overflow": false
-    },
-    {
-      "route": "/ecossistema/",
-      "width": 1440,
-      "client": 1440,
-      "scroll": 1440,
-      "body": 1440,
-      "overflow": false
-    },
-    {
-      "route": "/projetos/",
-      "width": 320,
-      "client": 320,
-      "scroll": 320,
-      "body": 320,
-      "overflow": false
-    },
-    {
-      "route": "/projetos/",
-      "width": 375,
-      "client": 375,
-      "scroll": 375,
-      "body": 375,
-      "overflow": false
-    },
-    {
-      "route": "/projetos/",
-      "width": 768,
-      "client": 768,
-      "scroll": 768,
-      "body": 768,
-      "overflow": false
-    },
-    {
-      "route": "/projetos/",
-      "width": 1024,
-      "client": 1024,
-      "scroll": 1024,
-      "body": 1024,
-      "overflow": false
-    },
-    {
-      "route": "/projetos/",
-      "width": 1440,
-      "client": 1440,
-      "scroll": 1440,
-      "body": 1440,
-      "overflow": false
-    },
-    {
-      "route": "/engenharia/",
-      "width": 320,
-      "client": 320,
-      "scroll": 320,
-      "body": 320,
-      "overflow": false
-    },
-    {
-      "route": "/engenharia/",
-      "width": 375,
-      "client": 375,
-      "scroll": 375,
-      "body": 375,
-      "overflow": false
-    },
-    {
-      "route": "/engenharia/",
-      "width": 768,
-      "client": 768,
-      "scroll": 768,
-      "body": 768,
-      "overflow": false
-    },
-    {
-      "route": "/engenharia/",
-      "width": 1024,
-      "client": 1024,
-      "scroll": 1024,
-      "body": 1024,
-      "overflow": false
-    },
-    {
-      "route": "/engenharia/",
-      "width": 1440,
-      "client": 1440,
-      "scroll": 1440,
-      "body": 1440,
-      "overflow": false
-    },
-    {
-      "route": "/contato/",
-      "width": 320,
-      "client": 320,
-      "scroll": 320,
-      "body": 320,
-      "overflow": false
-    },
-    {
-      "route": "/contato/",
-      "width": 375,
-      "client": 375,
-      "scroll": 375,
-      "body": 375,
-      "overflow": false
-    },
-    {
-      "route": "/contato/",
-      "width": 768,
-      "client": 768,
-      "scroll": 768,
-      "body": 768,
-      "overflow": false
-    },
-    {
-      "route": "/contato/",
-      "width": 1024,
-      "client": 1024,
-      "scroll": 1024,
-      "body": 1024,
-      "overflow": false
-    },
-    {
-      "route": "/contato/",
-      "width": 1440,
-      "client": 1440,
-      "scroll": 1440,
-      "body": 1440,
-      "overflow": false
-    },
-    {
-      "route": "/404.html",
-      "width": 320,
-      "client": 320,
-      "scroll": 320,
-      "body": 320,
-      "overflow": false
-    },
-    {
-      "route": "/404.html",
-      "width": 375,
-      "client": 375,
-      "scroll": 375,
-      "body": 375,
-      "overflow": false
-    },
-    {
-      "route": "/404.html",
-      "width": 768,
-      "client": 768,
-      "scroll": 768,
-      "body": 768,
-      "overflow": false
-    },
-    {
-      "route": "/404.html",
-      "width": 1024,
-      "client": 1024,
-      "scroll": 1024,
-      "body": 1024,
-      "overflow": false
-    },
-    {
-      "route": "/404.html",
-      "width": 1440,
-      "client": 1440,
-      "scroll": 1440,
-      "body": 1440,
-      "overflow": false
+      "theme": "dark",
+      "title": "Página não encontrada | Traders Automatizados"
     }
   ],
   "axe": [
@@ -439,10 +163,252 @@
       "violations": []
     }
   ],
-  "interactions": [
-    "first visit auto, manual light/dark, auto clears localStorage, manual overrides OS, live OS changes, reload, cross-page persistence, keyboard selection: PASS",
-    "delayed stylesheet flash check: PASS",
-    "mobile menu, theme select, Escape closes menu and restores focus: PASS"
+  "responsive": [
+    {
+      "route": "/",
+      "width": 320,
+      "client": 320,
+      "scroll": 320,
+      "overflow": false
+    },
+    {
+      "route": "/",
+      "width": 375,
+      "client": 375,
+      "scroll": 375,
+      "overflow": false
+    },
+    {
+      "route": "/",
+      "width": 768,
+      "client": 768,
+      "scroll": 768,
+      "overflow": false
+    },
+    {
+      "route": "/",
+      "width": 1024,
+      "client": 1024,
+      "scroll": 1024,
+      "overflow": false
+    },
+    {
+      "route": "/",
+      "width": 1440,
+      "client": 1440,
+      "scroll": 1440,
+      "overflow": false
+    },
+    {
+      "route": "/empresa/",
+      "width": 320,
+      "client": 320,
+      "scroll": 320,
+      "overflow": false
+    },
+    {
+      "route": "/empresa/",
+      "width": 375,
+      "client": 375,
+      "scroll": 375,
+      "overflow": false
+    },
+    {
+      "route": "/empresa/",
+      "width": 768,
+      "client": 768,
+      "scroll": 768,
+      "overflow": false
+    },
+    {
+      "route": "/empresa/",
+      "width": 1024,
+      "client": 1024,
+      "scroll": 1024,
+      "overflow": false
+    },
+    {
+      "route": "/empresa/",
+      "width": 1440,
+      "client": 1440,
+      "scroll": 1440,
+      "overflow": false
+    },
+    {
+      "route": "/ecossistema/",
+      "width": 320,
+      "client": 320,
+      "scroll": 320,
+      "overflow": false
+    },
+    {
+      "route": "/ecossistema/",
+      "width": 375,
+      "client": 375,
+      "scroll": 375,
+      "overflow": false
+    },
+    {
+      "route": "/ecossistema/",
+      "width": 768,
+      "client": 768,
+      "scroll": 768,
+      "overflow": false
+    },
+    {
+      "route": "/ecossistema/",
+      "width": 1024,
+      "client": 1024,
+      "scroll": 1024,
+      "overflow": false
+    },
+    {
+      "route": "/ecossistema/",
+      "width": 1440,
+      "client": 1440,
+      "scroll": 1440,
+      "overflow": false
+    },
+    {
+      "route": "/projetos/",
+      "width": 320,
+      "client": 320,
+      "scroll": 320,
+      "overflow": false
+    },
+    {
+      "route": "/projetos/",
+      "width": 375,
+      "client": 375,
+      "scroll": 375,
+      "overflow": false
+    },
+    {
+      "route": "/projetos/",
+      "width": 768,
+      "client": 768,
+      "scroll": 768,
+      "overflow": false
+    },
+    {
+      "route": "/projetos/",
+      "width": 1024,
+      "client": 1024,
+      "scroll": 1024,
+      "overflow": false
+    },
+    {
+      "route": "/projetos/",
+      "width": 1440,
+      "client": 1440,
+      "scroll": 1440,
+      "overflow": false
+    },
+    {
+      "route": "/engenharia/",
+      "width": 320,
+      "client": 320,
+      "scroll": 320,
+      "overflow": false
+    },
+    {
+      "route": "/engenharia/",
+      "width": 375,
+      "client": 375,
+      "scroll": 375,
+      "overflow": false
+    },
+    {
+      "route": "/engenharia/",
+      "width": 768,
+      "client": 768,
+      "scroll": 768,
+      "overflow": false
+    },
+    {
+      "route": "/engenharia/",
+      "width": 1024,
+      "client": 1024,
+      "scroll": 1024,
+      "overflow": false
+    },
+    {
+      "route": "/engenharia/",
+      "width": 1440,
+      "client": 1440,
+      "scroll": 1440,
+      "overflow": false
+    },
+    {
+      "route": "/contato/",
+      "width": 320,
+      "client": 320,
+      "scroll": 320,
+      "overflow": false
+    },
+    {
+      "route": "/contato/",
+      "width": 375,
+      "client": 375,
+      "scroll": 375,
+      "overflow": false
+    },
+    {
+      "route": "/contato/",
+      "width": 768,
+      "client": 768,
+      "scroll": 768,
+      "overflow": false
+    },
+    {
+      "route": "/contato/",
+      "width": 1024,
+      "client": 1024,
+      "scroll": 1024,
+      "overflow": false
+    },
+    {
+      "route": "/contato/",
+      "width": 1440,
+      "client": 1440,
+      "scroll": 1440,
+      "overflow": false
+    },
+    {
+      "route": "/404.html",
+      "width": 320,
+      "client": 320,
+      "scroll": 320,
+      "overflow": false
+    },
+    {
+      "route": "/404.html",
+      "width": 375,
+      "client": 375,
+      "scroll": 375,
+      "overflow": false
+    },
+    {
+      "route": "/404.html",
+      "width": 768,
+      "client": 768,
+      "scroll": 768,
+      "overflow": false
+    },
+    {
+      "route": "/404.html",
+      "width": 1024,
+      "client": 1024,
+      "scroll": 1024,
+      "overflow": false
+    },
+    {
+      "route": "/404.html",
+      "width": 1440,
+      "client": 1440,
+      "scroll": 1440,
+      "overflow": false
+    }
   ],
   "csp": [],
   "errors": []

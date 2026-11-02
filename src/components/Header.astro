@@ -41,17 +41,57 @@ const isCurrentPage = (href: string) => (href.replace(/\/+$/, "") || "/") === cu
           </li>
         ))}
         <li class="site-nav__theme">
-          <label class="theme-preference__label" for="theme-preference">Tema</label>
-          <select
-            class="theme-preference"
-            id="theme-preference"
-            name="theme-preference"
-            aria-label="Preferência de tema"
-          >
-            <option value="auto">Automático</option>
-            <option value="light">Claro</option>
-            <option value="dark">Escuro</option>
-          </select>
+          <div class="theme-control" id="theme-control">
+            <button
+              class="theme-trigger"
+              id="theme-preference"
+              type="button"
+              aria-controls="theme-options"
+              aria-expanded="false"
+              aria-label="Tema atual: Automático. Abrir opções de tema"
+              data-preference="auto"
+              data-effective-theme="light"
+            >
+              <svg class="theme-trigger__icon theme-trigger__icon--auto" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <rect x="3.5" y="4.5" width="17" height="12" rx="2" />
+                <path d="M8.5 20h7m-3.5-3.5V20m0-12v4m-2-2h4" />
+              </svg>
+              <svg class="theme-trigger__icon theme-trigger__icon--light" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <circle cx="12" cy="12" r="4" />
+                <path d="M12 2.5v2m0 15v2m9.5-9.5h-2m-15 0h-2m16.22-6.72-1.42 1.42M6.7 17.3l-1.42 1.42m13.44 0-1.42-1.42M6.7 6.7 5.28 5.28" />
+              </svg>
+              <svg class="theme-trigger__icon theme-trigger__icon--dark" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M20.1 15.2A8.5 8.5 0 0 1 8.8 3.9 8.7 8.7 0 1 0 20.1 15.2Z" />
+              </svg>
+              <span class="theme-trigger__label" id="theme-preference-label">Automático</span>
+              <svg class="theme-trigger__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="m4 6 4 4 4-4" />
+              </svg>
+            </button>
+
+            <div class="theme-options" id="theme-options" role="group" aria-label="Opções de tema" hidden>
+              <button class="theme-option" type="button" data-theme-value="auto" aria-pressed="true">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <rect x="3.5" y="4.5" width="17" height="12" rx="2" />
+                  <path d="M8.5 20h7m-3.5-3.5V20m0-12v4m-2-2h4" />
+                </svg>
+                <span>Automático</span>
+              </button>
+              <button class="theme-option" type="button" data-theme-value="light" aria-pressed="false">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <circle cx="12" cy="12" r="4" />
+                  <path d="M12 2.5v2m0 15v2m9.5-9.5h-2m-15 0h-2m16.22-6.72-1.42 1.42M6.7 17.3l-1.42 1.42m13.44 0-1.42-1.42M6.7 6.7 5.28 5.28" />
+                </svg>
+                <span>Claro</span>
+              </button>
+              <button class="theme-option" type="button" data-theme-value="dark" aria-pressed="false">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M20.1 15.2A8.5 8.5 0 0 1 8.8 3.9 8.7 8.7 0 1 0 20.1 15.2Z" />
+                </svg>
+                <span>Escuro</span>
+              </button>
+            </div>
+          </div>
         </li>
         <li class="site-nav__mobile-action">
           <a
