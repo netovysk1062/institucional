@@ -1,0 +1,47 @@
+---
+import HeroDiagram from "./HeroDiagram.astro";
+import { siteLinks } from "../data/site";
+---
+
+<section class="hero-section" id="topo" aria-labelledby="hero-title">
+  <div class="hero-section__glow" aria-hidden="true"></div>
+  <div class="shell hero-section__inner mx-auto grid items-center gap-12 lg:grid-cols-2">
+    <div class="hero-copy">
+      <p class="eyebrow hero-copy__eyebrow"><span class="eyebrow__line"></span> TECNOLOGIA PARA TRADERS E EMPRESAS</p>
+      <h1 class="hero-copy__title" id="hero-title">
+        <span>Engenharia que</span>
+        <span class="hero-copy__accent">transforma ideias</span>
+        <span>em tecnologia real.</span>
+      </h1>
+      <p class="hero-copy__summary">
+        Da automação de estratégias financeiras ao desenvolvimento de sistemas empresariais. Conheça as soluções tecnológicas que construímos para diferentes mercados.
+      </p>
+      <div class="hero-copy__actions">
+        <a
+          class="button button--primary"
+          href={siteLinks.tradingProducts}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Produtos para traders <span aria-hidden="true">↗</span>
+        </a>
+        <a
+          class="text-link hero-copy__business-link"
+          href={siteLinks.neuroLicence}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Soluções para empresas <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-art">
+      <HeroDiagram />
+    </div>
+  </div>
+  <a class="hero-scroll" href="#ecossistema">
+    <span class="hero-scroll__label">ROLE PARA EXPLORAR</span>
+    <span class="hero-scroll__line" aria-hidden="true"></span>
+  </a>
+</section>

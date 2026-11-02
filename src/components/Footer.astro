@@ -1,0 +1,89 @@
+---
+import { siteConfig, siteLinks, sitePages } from "../data/site";
+
+const currentPath = Astro.url.pathname.replace(/\/+$/, "") || "/";
+const isCurrentPage = (href: string) => (href.replace(/\/+$/, "") || "/") === currentPath;
+---
+
+<footer class="site-footer">
+  <div class="shell mx-auto">
+    <div class="site-footer__main">
+      <div class="site-footer__brand">
+        <a class="brand-lockup" href="/">
+          <img
+            class="brand-lockup__logo"
+            src="/assets/logo-160.webp"
+            width="160"
+            height="160"
+            alt=""
+            loading="lazy"
+            decoding="async"
+          />
+          <span class="brand-lockup__name">
+            <span>TRADERS</span>
+            <span>AUTOMATIZADOS</span>
+          </span>
+        </a>
+        <p>
+          Tecnologia para estratégias de trade e soluções de software empresarial.
+        </p>
+      </div>
+
+      <nav class="footer-column" aria-label="Navegação do site">
+        <h2>Explorar</h2>
+        <ul>
+          {sitePages.map((page) => (
+            <li>
+              <a href={page.href} aria-current={isCurrentPage(page.href) ? "page" : undefined}>
+                {page.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      <nav class="footer-column" aria-label="Marcas e plataformas">
+        <h2>Ecossistema</h2>
+        <ul>
+          <li>
+            <a href={siteLinks.neuroLicence} target="_blank" rel="noopener noreferrer">
+              NeuroLicence <span aria-hidden="true">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href={siteLinks.tradingProducts} target="_blank" rel="noopener noreferrer">
+              Produtos de trading <span aria-hidden="true">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href={siteLinks.partnerHub} target="_blank" rel="noopener noreferrer">
+              HUB do Parceiro <span aria-hidden="true">↗</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <nav class="footer-column" aria-label="Documentos da NeuroLicence">
+        <h2>NeuroLicence</h2>
+        <p class="footer-column__note">Termos e privacidade da marca.</p>
+        <ul>
+          <li>
+            <a href={siteLinks.terms} target="_blank" rel="noopener noreferrer">
+              Termos de uso <span aria-hidden="true">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href={siteLinks.privacy} target="_blank" rel="noopener noreferrer">
+              Privacidade <span aria-hidden="true">↗</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="site-footer__legal">
+      <p>© {new Date().getFullYear()} {siteConfig.name}. Todos os direitos reservados.</p>
+      <p class="site-footer__risk">Tecnologia para trading envolve risco de mercado. Resultados não são garantidos.</p>
+    </div>
+  </div>
+</footer>

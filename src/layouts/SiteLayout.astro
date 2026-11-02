@@ -1,0 +1,107 @@
+---
+import "../styles/global.css";
+import { siteConfig, siteLinks } from "../data/site";
+
+interface Props {
+  title?: string;
+  description?: string;
+  robots?: string;
+}
+
+const {
+  title = "Traders Automatizados | Engenharia que transforma ideias em tecnologia real",
+  description = siteConfig.description,
+  robots = "index, follow",
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const organizationId = new URL("#organization", siteConfig.url).href;
+const websiteId = new URL("#website", siteConfig.url).href;
+const socialImage = new URL("/og-cover.svg", Astro.site);
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": organizationId,
+      name: siteConfig.name,
+      legalName: siteConfig.legalName,
+      url: siteConfig.url,
+      email: siteLinks.institutionalEmail,
+      sameAs: [siteLinks.instagram],
+      brand: {
+        "@type": "Brand",
+        name: siteConfig.brand.name,
+        url: siteConfig.brand.url,
+      },
+    },
+    {
+      "@type": "WebSite",
+      "@id": websiteId,
+      name: siteConfig.name,
+      url: siteConfig.url,
+      inLanguage: "pt-BR",
+      publisher: { "@id": organizationId },
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${canonical.href}#webpage`,
+      name: title,
+      description,
+      url: canonical.href,
+      inLanguage: "pt-BR",
+      isPartOf: { "@id": websiteId },
+      about: { "@id": organizationId },
+      primaryImageOfPage: socialImage.href,
+    },
+  ],
+};
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#07080a" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="description" content={description} />
+    <meta name="robots" content={robots} />
+    <meta name="author" content={siteConfig.name} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+    <link
+      rel="preload"
+      href="/fonts/open-sans-v44-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="preload" href="/fonts/poppins-v24-500-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/poppins-v24-600-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <title>{title}</title>
+
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={siteConfig.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:image:type" content="image/svg+xml" />
+    <meta
+      property="og:image:alt"
+      content="Traders Automatizados — engenharia, software e automação"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImage} />
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <slot />
+  </body>
+</html>

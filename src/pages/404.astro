@@ -1,0 +1,40 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import PageIntro from "../components/PageIntro.astro";
+import { siteRoutes } from "../data/site";
+---
+
+<SiteLayout
+  title="Página não encontrada | Traders Automatizados"
+  description="O endereço solicitado não corresponde a uma página da Traders Automatizados."
+  robots="noindex, follow"
+>
+  <Header />
+  <main id="conteudo" class="route-page" tabindex="-1">
+    <PageIntro
+      number="404"
+      label="PÁGINA NÃO ENCONTRADA"
+      title="Não encontramos"
+      accent="essa página."
+      description="Confira o endereço ou escolha um dos caminhos para continuar."
+    />
+    <section class="route-section" aria-label="Continue navegando">
+      <div class="shell mx-auto">
+        <div class="route-cta">
+          <div>
+            <p class="eyebrow"><span class="eyebrow__line"></span> CONTINUE NAVEGANDO</p>
+            <h2>Volte ao site institucional.</h2>
+            <p>Acesse a apresentação da empresa ou explore as marcas e plataformas do ecossistema.</p>
+          </div>
+          <div class="route-cta__actions">
+            <a class="button button--primary" href={siteRoutes.home}>Ir para o início <span aria-hidden="true">→</span></a>
+            <a class="button button--outline" href={siteRoutes.ecosystem}>Ver ecossistema <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</SiteLayout>

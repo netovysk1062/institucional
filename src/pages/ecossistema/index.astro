@@ -1,0 +1,128 @@
+---
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import PageIntro from "../../components/PageIntro.astro";
+import { siteLinks, siteRoutes } from "../../data/site";
+---
+
+<SiteLayout
+  title="Marcas e plataformas | Traders Automatizados"
+  description="Encontre a NeuroLicence para soluções empresariais, FiboMat e CycleFX PRO para traders e os acessos ao HUB do Parceiro."
+>
+  <Header />
+  <main id="conteudo" class="route-page" tabindex="-1">
+    <PageIntro
+      number="02"
+      label="ECOSSISTEMA"
+      title="Marcas, produtos e"
+      accent="plataformas do ecossistema."
+      description="Encontre a marca de desenvolvimento empresarial, os produtos para trading e os acessos às plataformas da Traders Automatizados."
+    />
+
+    <section class="route-section" aria-labelledby="ecosystem-map-title">
+      <div class="shell mx-auto">
+        <div class="route-section__heading">
+          <p class="eyebrow"><span class="eyebrow__line"></span> EXPLORE O ECOSSISTEMA</p>
+          <h2 class="section-title" id="ecosystem-map-title">
+            O que você <span>está procurando?</span>
+          </h2>
+          <p class="body-copy">
+            Cada opção leva ao serviço ou à plataforma voltada ao seu uso.
+          </p>
+        </div>
+
+        <div class="ecosystem-overview" role="group" aria-label="Três frentes do ecossistema Traders Automatizados">
+          <div class="ecosystem-overview__core">
+            <img src="/assets/logo-160.webp" width="160" height="160" alt="" loading="lazy" decoding="async" />
+            <span id="ecosystem-core-label">Traders Automatizados</span>
+          </div>
+
+          <article class="ecosystem-card ecosystem-overview__card ecosystem-card--neuro">
+            <div class="ecosystem-card__top">
+              <span class="card-index">PARA EMPRESAS</span>
+              <span class="card-arrow" aria-hidden="true">↗</span>
+            </div>
+            <div class="ecosystem-card__main">
+              <div class="ecosystem-card__symbol" aria-hidden="true">
+                <svg viewBox="0 0 40 40" fill="none">
+                  <path d="M9 29V11l11 12 11-12v18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                  <circle cx="9" cy="11" r="2" fill="currentColor" />
+                  <circle cx="31" cy="11" r="2" fill="currentColor" />
+                </svg>
+              </div>
+              <p class="eyebrow eyebrow--small">DESENVOLVIMENTO EMPRESARIAL</p>
+              <h2>NeuroLicence</h2>
+              <p>A marca de desenvolvimento empresarial da Traders Automatizados LTDA. Conheça os sistemas personalizados e as automações para negócios.</p>
+            </div>
+            <a class="ecosystem-card__link" href={siteLinks.neuroLicence} target="_blank" rel="noopener noreferrer">
+              Conhecer soluções empresariais <span aria-hidden="true">↗</span>
+            </a>
+          </article>
+
+          <article class="ecosystem-card ecosystem-overview__card ecosystem-card--trading">
+            <div class="ecosystem-card__top">
+              <span class="card-index">PARA TRADERS</span>
+              <span class="card-arrow" aria-hidden="true">↗</span>
+            </div>
+            <div class="ecosystem-card__main">
+              <div class="ecosystem-card__symbol ecosystem-card__symbol--trading" aria-hidden="true">
+                <svg viewBox="0 0 40 40" fill="none">
+                  <path d="M7 29h26M9 24l7-8 6 5 9-11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                  <circle cx="31" cy="10" r="2.4" fill="currentColor" />
+                </svg>
+              </div>
+              <p class="eyebrow eyebrow--small">AUTOMAÇÃO NO METATRADER 5</p>
+              <h2>FiboMat e CycleFX PRO</h2>
+              <p>O FiboMat automatiza etapas da execução da FIMATHE Raiz. O CycleFX PRO reúne Teoria dos Ciclos e PCM quantitativo. Ambos são voltados a traders.</p>
+            </div>
+            <a class="ecosystem-card__link" href={siteLinks.tradingProducts} target="_blank" rel="noopener noreferrer">
+              Consultar produtos e licenças <span aria-hidden="true">↗</span>
+            </a>
+          </article>
+
+          <article class="ecosystem-card ecosystem-overview__card ecosystem-card--platform">
+            <div class="ecosystem-card__top">
+              <span class="card-index">ACESSO E ACOMPANHAMENTO</span>
+              <span class="card-arrow" aria-hidden="true">↗</span>
+            </div>
+            <div class="ecosystem-card__main">
+              <div class="ecosystem-card__symbol ecosystem-card__symbol--platform" aria-hidden="true">
+                <svg viewBox="0 0 40 40" fill="none">
+                  <rect x="7" y="8" width="26" height="10" rx="3" stroke="currentColor" stroke-width="1.6" />
+                  <rect x="7" y="22" width="26" height="10" rx="3" stroke="currentColor" stroke-width="1.6" />
+                  <circle cx="13" cy="13" r="1.5" fill="currentColor" />
+                  <circle cx="13" cy="27" r="1.5" fill="currentColor" />
+                  <path d="M19 13h8M19 27h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                </svg>
+              </div>
+              <p class="eyebrow eyebrow--small">PLATAFORMAS DA TRADERS AUTOMATIZADOS</p>
+              <h2>Ecossistema &amp; HUB do Parceiro</h2>
+              <p>Na TAPF, traders consultam produtos, planos e licenças. No HUB do Parceiro, acompanham a licença, consultam dados e relatórios e acessam suporte e conteúdo técnico.</p>
+            </div>
+            <a class="ecosystem-card__link" href={siteLinks.partnerHub} target="_blank" rel="noopener noreferrer">
+              Abrir o HUB do Parceiro <span aria-hidden="true">↗</span>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="route-section" aria-label="Continue explorando">
+      <div class="shell mx-auto">
+        <div class="route-cta">
+          <div>
+            <p class="eyebrow"><span class="eyebrow__line"></span> PRÓXIMA ETAPA</p>
+            <h2>Quer conhecer as funções de cada produto?</h2>
+            <p>A página Projetos reúne descrições mais detalhadas dos produtos e plataformas.</p>
+          </div>
+          <div class="route-cta__actions">
+            <a class="button button--primary" href={siteRoutes.projects}>Ver projetos <span aria-hidden="true">→</span></a>
+            <a class="button button--outline" href={siteRoutes.contact}>Falar com a equipe <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</SiteLayout>

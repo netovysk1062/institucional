@@ -1,0 +1,62 @@
+---
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import PageIntro from "../../components/PageIntro.astro";
+import { siteRoutes } from "../../data/site";
+---
+
+<SiteLayout
+  title="História da Traders Automatizados | Empresa"
+  description="Conheça a origem da Traders Automatizados na automação de estratégias com FIMATHE e a expansão para software e processos empresariais."
+>
+  <Header />
+  <main id="conteudo" class="route-page" tabindex="-1">
+    <PageIntro
+      number="01"
+      label="EMPRESA"
+      title="Do trading"
+      accent="ao software empresarial."
+      description="A empresa começou no mercado financeiro e ampliou sua atuação para atender também processos de negócio."
+    />
+
+    <section class="route-section" aria-labelledby="company-overview-title">
+      <div class="shell mx-auto">
+        <div class="company-summary">
+          <div>
+            <p class="eyebrow"><span class="eyebrow__line"></span> QUEM SOMOS</p>
+            <h2 class="section-title" id="company-overview-title">
+              Como a empresa <span>ampliou seu trabalho.</span>
+            </h2>
+          </div>
+          <div class="company-summary__copy">
+            <p class="lead-copy">
+              A Traders Automatizados surgiu para desenvolver soluções que automatizam estratégias de trade, com foco principal nas que seguem a metodologia FIMATHE.
+            </p>
+            <p class="body-copy">
+              Ao longo de mais de dois anos de atuação, ampliamos o trabalho para o desenvolvimento de softwares e plataformas digitais e a automação de processos comerciais e empresariais. A tecnologia para o mercado financeiro continua ativa ao lado dessa nova frente.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="route-section route-section--raised" aria-labelledby="company-next-title">
+      <div class="shell mx-auto">
+        <div class="route-cta">
+          <div>
+            <p class="eyebrow"><span class="eyebrow__line"></span> CONTINUE EXPLORANDO</p>
+            <h2 id="company-next-title">Conheça marcas, produtos e plataformas.</h2>
+            <p>O Ecossistema organiza os acessos. Em Projetos, você encontra o que cada produto faz.</p>
+          </div>
+          <div class="route-cta__actions">
+            <a class="button button--primary" href={siteRoutes.ecosystem}>Ver o ecossistema <span aria-hidden="true">→</span></a>
+            <a class="button button--outline" href={siteRoutes.projects}>Ver projetos <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</SiteLayout>

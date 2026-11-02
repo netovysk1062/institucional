@@ -1,0 +1,28 @@
+---
+import { siteLinks, siteRoutes } from "../data/site";
+---
+
+<section class="contact-section section-space" id="contato" aria-labelledby="contact-title">
+  <div class="shell mx-auto">
+    <div class="contact-panel">
+      <div class="contact-panel__glow" aria-hidden="true"></div>
+      <div class="contact-panel__content">
+          <p class="eyebrow"><span class="eyebrow__line"></span> CONTATO</p>
+        <h2 class="section-title" id="contact-title">
+          Tem um projeto <span>em mente?</span>
+        </h2>
+        <p class="body-copy">
+          Fale com a equipe sobre uma necessidade empresarial ou escolha o canal adequado na página de contato.
+        </p>
+      </div>
+      <div class="contact-panel__actions">
+        <a class="button button--primary" href={siteLinks.neuroLicence} target="_blank" rel="noopener noreferrer">
+          Conhecer a NeuroLicence <span aria-hidden="true">↗</span>
+        </a>
+        <a class="button button--outline" href={siteRoutes.contact}>
+          Ver canais de contato <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

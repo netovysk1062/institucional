@@ -1,0 +1,83 @@
+---
+import { siteLinks, sitePages } from "../data/site";
+
+const currentPath = Astro.url.pathname.replace(/\/+$/, "") || "/";
+const isCurrentPage = (href: string) => (href.replace(/\/+$/, "") || "/") === currentPath;
+---
+
+<header class="site-header">
+  <div class="site-header__inner shell mx-auto flex items-center justify-between">
+    <a
+      class="brand-lockup"
+      href="/"
+      aria-current={isCurrentPage("/") ? "page" : undefined}
+    >
+      <img
+        class="brand-lockup__logo"
+        src="/assets/logo-160.webp"
+        width="160"
+        height="160"
+        alt=""
+        loading="eager"
+        decoding="async"
+      />
+      <span class="brand-lockup__name">
+        <span>TRADERS</span>
+        <span>AUTOMATIZADOS</span>
+      </span>
+    </a>
+
+    <nav class="site-nav" id="menu-principal" aria-label="Navegação principal">
+      <ul class="site-nav__list">
+        {sitePages.map((link) => (
+          <li>
+            <a
+              class="site-nav__link"
+              href={link.href}
+              aria-current={isCurrentPage(link.href) ? "page" : undefined}
+            >
+              {link.label}
+            </a>
+          </li>
+        ))}
+        <li class="site-nav__mobile-action">
+          <a
+            class="button button--primary site-nav__mobile-cta"
+            href={siteLinks.neuroLicence}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Soluções empresariais <span aria-hidden="true">↗</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="site-header__actions">
+      <a
+        class="button button--header"
+        href={siteLinks.neuroLicence}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Conhecer as soluções empresariais da NeuroLicence"
+      >
+        Soluções empresariais <span aria-hidden="true">↗</span>
+      </a>
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-controls="menu-principal"
+        aria-expanded="false"
+        aria-label="Abrir menu"
+      >
+        <span class="menu-toggle__lines" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<script>
+  import { setupNavigation } from "../scripts/navigation";
+
+  setupNavigation();
+</script>

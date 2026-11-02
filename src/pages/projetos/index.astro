@@ -1,0 +1,146 @@
+---
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import PageIntro from "../../components/PageIntro.astro";
+import { siteLinks } from "../../data/site";
+---
+
+<SiteLayout
+  title="Produtos e plataformas | Traders Automatizados"
+  description="Conheça o FiboMat, o CycleFX PRO, a plataforma TAPF e o HUB do Parceiro, com detalhes de uso e acesso."
+>
+  <Header />
+  <main id="conteudo" class="route-page" tabindex="-1">
+    <PageIntro
+      number="03"
+      label="PROJETOS"
+      title="Produtos e plataformas"
+      accent="do ecossistema."
+      description="Veja como funcionam as ferramentas de trading, onde consultar planos e licenças e o que você encontra no HUB do Parceiro."
+    />
+
+    <section class="route-section" aria-labelledby="projects-list-title">
+      <div class="shell mx-auto">
+        <div class="route-section__heading">
+          <p class="eyebrow"><span class="eyebrow__line"></span> PRODUTOS E ACESSOS</p>
+          <h2 class="section-title" id="projects-list-title">
+            O que cada produto <span>permite fazer.</span>
+          </h2>
+          <p class="body-copy">
+            Consulte a função de cada solução e siga para a plataforma indicada para ver informações atualizadas.
+          </p>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card">
+            <span class="project-card__index">01 / FIMATHE RAIZ · METATRADER 5</span>
+            <div class="project-card__art" aria-hidden="true">
+              <svg viewBox="0 0 280 116" fill="none">
+                <path d="M12 82h42l18-27 22 16 24-35 22 25 24-15 29 5 20-28 23 14 34-21" stroke="#3080F0" stroke-opacity=".82" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M12 101h256M12 61h256" stroke="#D2D2DC" stroke-opacity=".17" stroke-dasharray="4 6" />
+                <circle cx="246" cy="37" r="4" fill="#3020A0" />
+              </svg>
+            </div>
+            <div class="project-card__body">
+              <h2>FiboMat</h2>
+              <p>O FiboMat aplica a metodologia FIMATHE Raiz no MetaTrader 5 e automatiza etapas repetitivas da execução. A leitura operacional continua com o trader.</p>
+              <div class="project-card__tags" role="group" aria-label="Tecnologias e contexto">
+                <span>Fimathe Raiz</span>
+                <span>MetaTrader 5</span>
+                <span>MQL5</span>
+              </div>
+            </div>
+            <a class="text-link" href={siteLinks.tradingProducts} target="_blank" rel="noopener noreferrer">
+              Ver FiboMat e suas condições <span aria-hidden="true">↗</span>
+            </a>
+          </article>
+
+          <article class="project-card">
+            <span class="project-card__index">02 / TEORIA DOS CICLOS · PCM</span>
+            <div class="project-card__art" aria-hidden="true">
+              <svg viewBox="0 0 280 116" fill="none">
+                <circle cx="140" cy="58" r="39" stroke="#3020A0" stroke-opacity=".8" stroke-width="1.5" />
+                <circle cx="140" cy="58" r="25" stroke="#3080F0" stroke-opacity=".8" stroke-width="1.5" />
+                <path d="M140 19v13m39 26h-13m-26 39V84m-39-26h13" stroke="#D2D2DC" stroke-opacity=".55" stroke-width="1.5" />
+                <circle cx="140" cy="58" r="5" fill="#3080F0" />
+                <circle cx="140" cy="19" r="3" fill="#3080F0" />
+                <circle cx="179" cy="58" r="3" fill="#3020A0" />
+              </svg>
+            </div>
+            <div class="project-card__body">
+              <h2>CycleFX PRO</h2>
+              <p>O CycleFX PRO reúne Teoria dos Ciclos e PCM quantitativo para analisar o contexto, definir parâmetros e executar no MetaTrader 5.</p>
+              <div class="project-card__tags" role="group" aria-label="Tecnologias e contexto">
+                <span>Teoria dos Ciclos</span>
+                <span>PCM</span>
+                <span>MetaTrader 5</span>
+              </div>
+            </div>
+            <a class="text-link" href={siteLinks.tradingProducts} target="_blank" rel="noopener noreferrer">
+              Ver CycleFX PRO e suas condições <span aria-hidden="true">↗</span>
+            </a>
+          </article>
+
+          <article class="project-card">
+            <span class="project-card__index">03 / PLATAFORMA COMERCIAL · TAPF</span>
+            <div class="project-card__art" aria-hidden="true">
+              <svg viewBox="0 0 280 116" fill="none">
+                <rect x="27" y="19" width="226" height="78" rx="7" stroke="#D2D2DC" stroke-opacity=".28" />
+                <path d="M28 38h224" stroke="#D2D2DC" stroke-opacity=".22" />
+                <circle cx="41" cy="29" r="2.5" fill="#3080F0" />
+                <circle cx="51" cy="29" r="2.5" fill="#3020A0" />
+                <rect x="45" y="53" width="61" height="30" rx="4" stroke="#3080F0" stroke-opacity=".8" />
+                <rect x="121" y="53" width="48" height="30" rx="4" stroke="#D2D2DC" stroke-opacity=".44" />
+                <path d="M176 58h48M176 67h38M176 76h43" stroke="#D2D2DC" stroke-opacity=".42" stroke-linecap="round" />
+              </svg>
+            </div>
+            <div class="project-card__body">
+              <h2>Plataforma TAPF</h2>
+              <p>Na plataforma comercial, traders consultam os produtos disponíveis, comparam planos e conferem as condições de licença atualizadas.</p>
+              <div class="project-card__tags" role="group" aria-label="Recursos da plataforma">
+                <span>Produtos</span>
+                <span>Planos</span>
+                <span>Licenças</span>
+              </div>
+            </div>
+            <a class="text-link" href={siteLinks.tradingProducts} target="_blank" rel="noopener noreferrer">
+              Consultar catálogo e licenças <span aria-hidden="true">↗</span>
+            </a>
+          </article>
+
+          <article class="project-card">
+            <span class="project-card__index">04 / PAINEL DO PARCEIRO · HUB</span>
+            <div class="project-card__art" aria-hidden="true">
+              <svg viewBox="0 0 280 116" fill="none">
+                <path d="M140 58H55m85 0h85M140 58v-33m0 33v33" stroke="#D2D2DC" stroke-opacity=".35" stroke-width="1.5" />
+                <rect x="16" y="42" width="40" height="32" rx="6" stroke="#3080F0" stroke-width="1.5" />
+                <rect x="224" y="42" width="40" height="32" rx="6" stroke="#3020A0" stroke-width="1.5" />
+                <rect x="120" y="9" width="40" height="32" rx="6" stroke="#3080F0" stroke-width="1.5" />
+                <rect x="120" y="75" width="40" height="32" rx="6" stroke="#3020A0" stroke-width="1.5" />
+                <circle cx="140" cy="58" r="6" fill="#E9E9E9" />
+              </svg>
+            </div>
+            <div class="project-card__body">
+              <h2>HUB do Parceiro</h2>
+              <p>O painel permite acompanhar o status da licença e da conta, consultar dados e relatórios e acessar suporte e conteúdo técnico do ecossistema.</p>
+              <div class="project-card__tags" role="group" aria-label="Recursos do HUB do Parceiro">
+                <span>Acompanhamento</span>
+                <span>Suporte</span>
+                <span>Conteúdo técnico</span>
+              </div>
+            </div>
+            <a class="text-link" href={siteLinks.partnerHub} target="_blank" rel="noopener noreferrer">
+              Abrir o HUB do Parceiro <span aria-hidden="true">↗</span>
+            </a>
+          </article>
+        </div>
+
+        <p class="experience-disclaimer">
+          O uso de ferramentas de trading envolve risco de mercado. Automação não elimina esse risco nem garante resultados financeiros.
+        </p>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</SiteLayout>

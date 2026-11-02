@@ -1,0 +1,127 @@
+{
+  "internalDestinations": [
+    {
+      "path": "/",
+      "hash": "#conteudo",
+      "status": 200,
+      "anchor": true
+    },
+    {
+      "path": "/",
+      "hash": "",
+      "status": 200,
+      "anchor": true
+    },
+    {
+      "path": "/empresa/",
+      "hash": "",
+      "status": 200,
+      "anchor": true
+    },
+    {
+      "path": "/ecossistema/",
+      "hash": "",
+      "status": 200,
+      "anchor": true
+    },
+    {
+      "path": "/projetos/",
+      "hash": "",
+      "status": 200,
+      "anchor": true
+    },
+    {
+      "path": "/engenharia/",
+      "hash": "",
+      "status": 200,
+      "anchor": true
+    },
+    {
+      "path": "/contato/",
+      "hash": "",
+      "status": 200,
+      "anchor": true
+    },
+    {
+      "path": "/",
+      "hash": "#ecossistema",
+      "status": 200,
+      "anchor": true
+    },
+    {
+      "path": "/empresa/",
+      "hash": "#conteudo",
+      "status": 200,
+      "anchor": true
+    },
+    {
+      "path": "/ecossistema/",
+      "hash": "#conteudo",
+      "status": 200,
+      "anchor": true
+    },
+    {
+      "path": "/projetos/",
+      "hash": "#conteudo",
+      "status": 200,
+      "anchor": true
+    },
+    {
+      "path": "/engenharia/",
+      "hash": "#conteudo",
+      "status": 200,
+      "anchor": true
+    },
+    {
+      "path": "/contato/",
+      "hash": "#conteudo",
+      "status": 200,
+      "anchor": true
+    }
+  ],
+  "brokenInternal": [],
+  "notFound": [
+    {
+      "width": 1440,
+      "status": 404,
+      "title": "Página não encontrada | Traders Automatizados",
+      "robots": "noindex, follow",
+      "links": [
+        "/",
+        "/ecossistema/"
+      ]
+    },
+    {
+      "width": 375,
+      "status": 404,
+      "title": "Página não encontrada | Traders Automatizados",
+      "robots": "noindex, follow",
+      "links": [
+        "/",
+        "/ecossistema/"
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "path": "/robots.txt",
+      "status": 200,
+      "bytes": 85
+    },
+    {
+      "path": "/sitemap.xml",
+      "status": 200,
+      "bytes": 548
+    },
+    {
+      "path": "/favicon.ico",
+      "status": 200,
+      "bytes": 32543
+    },
+    {
+      "path": "/og-cover.svg",
+      "status": 200,
+      "bytes": 7186
+    }
+  ]
+}

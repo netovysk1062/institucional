@@ -1,0 +1,77 @@
+services:
+  - type: web
+    runtime: static
+    name: traders-automatizados-institucional
+    repo: https://github.com/netovysk1062/institucional.git
+    branch: main
+    autoDeployTrigger: off
+    buildCommand: npm ci && npm run build
+    staticPublishPath: ./dist
+    headers:
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: X-Frame-Options
+        value: DENY
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin
+      - path: /*
+        name: Permissions-Policy
+        value: camera=(), geolocation=(), microphone=(), payment=()
+      - path: /*
+        name: Content-Security-Policy
+        value: "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; script-src 'self' 'sha256-Uu5akJ2QfzigyRUag9dyxKq7iUejrMYJ3w/33Ed/IMs='; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'self'; upgrade-insecure-requests"
+      - path: /_astro/*
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+      - path: /fonts/*
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+      - path: /assets/*
+        name: Cache-Control
+        value: public, max-age=86400, stale-while-revalidate=604800
+      - path: /favicon.ico
+        name: Cache-Control
+        value: public, max-age=86400, stale-while-revalidate=604800
+      - path: /og-cover.svg
+        name: Cache-Control
+        value: public, max-age=86400, stale-while-revalidate=604800
+      - path: /
+        name: Cache-Control
+        value: no-cache
+      - path: /empresa/*
+        name: Cache-Control
+        value: no-cache
+      - path: /ecossistema/*
+        name: Cache-Control
+        value: no-cache
+      - path: /projetos/*
+        name: Cache-Control
+        value: no-cache
+      - path: /engenharia/*
+        name: Cache-Control
+        value: no-cache
+      - path: /contato/*
+        name: Cache-Control
+        value: no-cache
+      - path: /404.html
+        name: Cache-Control
+        value: no-cache
+    routes:
+      - type: redirect
+        source: /empresa
+        destination: /empresa/
+      - type: redirect
+        source: /ecossistema
+        destination: /ecossistema/
+      - type: redirect
+        source: /projetos
+        destination: /projetos/
+      - type: redirect
+        source: /engenharia
+        destination: /engenharia/
+      - type: redirect
+        source: /contato
+        destination: /contato/

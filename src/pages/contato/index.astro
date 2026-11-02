@@ -1,0 +1,70 @@
+---
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import PageIntro from "../../components/PageIntro.astro";
+import { siteLinks } from "../../data/site";
+---
+
+<SiteLayout
+  title="Contato Traders Automatizados | Canais oficiais"
+  description="Encontre o canal da NeuroLicence para projetos empresariais, a plataforma comercial dos produtos de trading ou o contato institucional."
+>
+  <Header />
+  <main id="conteudo" class="route-page" tabindex="-1">
+    <PageIntro
+      number="05"
+      label="CONTATO"
+      title="Fale com a equipe"
+      accent="da Traders Automatizados."
+      description="Escolha o canal conforme o assunto: desenvolvimento para empresas, produtos de trading ou contato institucional."
+    />
+
+    <section class="route-section" aria-labelledby="contact-options-title">
+      <div class="shell mx-auto">
+        <div class="route-section__heading">
+          <p class="eyebrow"><span class="eyebrow__line"></span> FALE COM A EQUIPE</p>
+          <h2 class="section-title" id="contact-options-title">
+            Qual assunto <span>você quer tratar?</span>
+          </h2>
+        </div>
+
+        <div class="contact-options">
+          <article class="contact-option">
+            <span class="company-principle__index">EMPRESAS</span>
+            <h2>Desenvolvimento empresarial</h2>
+            <p>Converse com a NeuroLicence sobre sistemas personalizados e automação de processos. E-mail oficial: <a class="contact-option__email" href={`mailto:${siteLinks.neuroLicenceEmail}`}>{siteLinks.neuroLicenceEmail}</a>.</p>
+            <a class="button button--primary" href={siteLinks.neuroLicence} target="_blank" rel="noopener noreferrer">
+              Conhecer a NeuroLicence <span aria-hidden="true">↗</span>
+            </a>
+          </article>
+
+          <article class="contact-option">
+            <span class="company-principle__index">TRADERS</span>
+            <h2>Produtos de trading</h2>
+            <p>Consulte recursos, planos, compatibilidade e regras de licença no canal comercial.</p>
+            <a class="button button--outline" href={siteLinks.tradingProducts} target="_blank" rel="noopener noreferrer">
+              Consultar produtos e planos <span aria-hidden="true">↗</span>
+            </a>
+          </article>
+
+          <article class="contact-option">
+            <span class="company-principle__index">INSTITUCIONAL</span>
+            <h2>Assuntos corporativos</h2>
+            <p>Para propostas, parcerias ou outros assuntos da Traders Automatizados.</p>
+            <a
+              class="text-link contact-option__email"
+              href={`mailto:${siteLinks.institutionalEmail}`}
+            >
+              {siteLinks.institutionalEmail}
+            </a>
+            <a class="text-link" href={siteLinks.instagram} target="_blank" rel="noopener noreferrer">
+              Instagram institucional <span aria-hidden="true">↗</span>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</SiteLayout>

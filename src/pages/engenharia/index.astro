@@ -1,0 +1,96 @@
+---
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import PageIntro from "../../components/PageIntro.astro";
+import { siteRoutes } from "../../data/site";
+---
+
+<SiteLayout
+  title="Processo de desenvolvimento | Traders Automatizados"
+  description="Veja como a Traders Automatizados analisa necessidades, define escopo, desenvolve soluções e testa os fluxos previstos em cada projeto."
+>
+  <Header />
+  <main id="conteudo" class="route-page" tabindex="-1">
+    <PageIntro
+      number="04"
+      label="ENGENHARIA"
+      title="Como transformamos"
+      accent="necessidades em software."
+      description="Conheça as etapas de desenvolvimento e os tipos de solução que construímos."
+    />
+
+    <section class="route-section" aria-labelledby="engineering-capabilities-title">
+      <div class="shell mx-auto">
+        <div class="route-section__heading">
+          <p class="eyebrow"><span class="eyebrow__line"></span> EXEMPLOS DE APLICAÇÃO</p>
+          <h2 class="section-title" id="engineering-capabilities-title">
+            Sistemas e automações <span>para tarefas reais.</span>
+          </h2>
+          <p class="body-copy">
+            A necessidade define o que será desenvolvido. Estes exemplos mostram os tipos de problema que a engenharia pode resolver.
+          </p>
+        </div>
+
+        <div class="technology-grid">
+          <article class="technology-card">
+            <span class="technology-card__index">01 / SOFTWARE EMPRESARIAL</span>
+            <h3>Aplicações e integrações</h3>
+            <p>Desenvolvemos sistemas web e conectamos ferramentas por APIs e bancos de dados para automatizar tarefas comerciais e administrativas.</p>
+            <div class="technology-card__tags" role="group" aria-label="Áreas de desenvolvimento">
+              <span>Sistemas web</span><span>APIs</span><span>Automações</span>
+            </div>
+          </article>
+          <article class="technology-card">
+            <span class="technology-card__index">02 / PRODUTOS FINANCEIROS</span>
+            <h3>Automação para MetaTrader 5</h3>
+            <p>Com MQL5, desenvolvemos ferramentas de execução baseadas em regras operacionais. FiboMat e CycleFX PRO são produtos próprios para essa plataforma.</p>
+            <div class="technology-card__tags" role="group" aria-label="Tecnologias e produtos">
+              <span>MQL5</span><span>MetaTrader 5</span><span>FiboMat</span><span>CycleFX PRO</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="route-section" aria-labelledby="engineering-method-title">
+      <div class="shell mx-auto">
+        <div class="route-section__heading">
+          <p class="eyebrow"><span class="eyebrow__line"></span> ETAPAS DE DESENVOLVIMENTO</p>
+          <h2 class="section-title" id="engineering-method-title">
+            Da rotina descrita <span>à validação.</span>
+          </h2>
+          <p class="body-copy">Antes de começar, alinhamos o que será feito e como a entrega será verificada. As etapas acompanham o escopo de cada projeto.</p>
+        </div>
+        <ol class="company-process">
+          <li class="process-step"><h3>Entender a rotina</h3><p>Conversamos sobre a tarefa, quem vai usar a solução e o ambiente atual.</p></li>
+          <li class="process-step"><h3>Definir a solução</h3><p>Combinamos o escopo, as integrações necessárias e os critérios de aceite.</p></li>
+          <li class="process-step"><h3>Desenvolver</h3><p>Construímos as telas, regras, integrações ou automações previstas.</p></li>
+          <li class="process-step"><h3>Testar</h3><p>Verificamos os fluxos principais e as integrações no ambiente previsto.</p></li>
+          <li class="process-step"><h3>Entregar</h3><p>Disponibilizamos a solução e orientamos o uso conforme o combinado.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="route-section route-section--raised" aria-label="Próximas etapas">
+      <div class="shell mx-auto">
+        <div class="route-cta">
+          <div>
+            <p class="eyebrow"><span class="eyebrow__line"></span> PRÓXIMAS ETAPAS</p>
+            <h2>Quer conversar sobre um projeto?</h2>
+            <p>Fale com a equipe ou veja em detalhe as ferramentas desenvolvidas para trading.</p>
+          </div>
+          <div class="route-cta__actions">
+            <a class="button button--primary" href={siteRoutes.contact}>
+              Falar com a equipe <span aria-hidden="true">→</span>
+            </a>
+            <a class="button button--outline" href={siteRoutes.projects}>
+              Ver produtos <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</SiteLayout>

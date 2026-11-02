@@ -1,0 +1,109 @@
+---
+import { siteLinks } from "../data/site";
+---
+
+<section class="ecosystem-section section-space" id="ecossistema" aria-labelledby="ecosystem-title">
+  <div class="shell mx-auto">
+    <div class="section-heading section-heading--split">
+      <div>
+        <p class="eyebrow"><span class="eyebrow__line"></span> SOLUÇÕES E ACESSOS</p>
+        <h2 class="section-title" id="ecosystem-title">
+          Escolha por onde <span>começar.</span>
+        </h2>
+      </div>
+      <p class="section-heading__aside body-copy">
+        Acesse os serviços para empresas, os produtos para traders ou as plataformas da Traders Automatizados.
+      </p>
+    </div>
+
+    <div class="ecosystem-grid grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <article class="ecosystem-card ecosystem-card--neuro">
+        <div class="ecosystem-card__top">
+          <span class="card-index">EMPRESAS · DESENVOLVIMENTO</span>
+          <span class="card-arrow" aria-hidden="true">↗</span>
+        </div>
+        <div class="ecosystem-card__main">
+          <div class="ecosystem-card__symbol ecosystem-card__symbol--neuro" aria-hidden="true">
+            <svg viewBox="0 0 40 40" fill="none">
+              <path d="M9 29V11l11 12 11-12v18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+              <circle cx="9" cy="11" r="2" fill="currentColor" />
+              <circle cx="31" cy="11" r="2" fill="currentColor" />
+            </svg>
+          </div>
+          <p class="eyebrow eyebrow--small">SISTEMAS E AUTOMAÇÃO</p>
+          <h3>NeuroLicence</h3>
+          <p>
+            Sistemas personalizados e automação de processos para negócios.
+          </p>
+        </div>
+        <a
+          class="ecosystem-card__link"
+          href={siteLinks.neuroLicence}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Soluções empresariais <span aria-hidden="true">↗</span>
+        </a>
+      </article>
+
+      <article class="ecosystem-card ecosystem-card--trading">
+        <div class="ecosystem-card__top">
+          <span class="card-index">TRADERS · PRODUTOS MT5</span>
+          <span class="card-arrow" aria-hidden="true">↗</span>
+        </div>
+        <div class="ecosystem-card__main">
+          <div class="ecosystem-card__symbol ecosystem-card__symbol--trading" aria-hidden="true">
+            <svg viewBox="0 0 40 40" fill="none">
+              <path d="M7 29h26M9 24l7-8 6 5 9-11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+              <circle cx="31" cy="10" r="2.4" fill="currentColor" />
+            </svg>
+          </div>
+          <p class="eyebrow eyebrow--small">FIMATHE E CICLOS</p>
+          <h3>FiboMat e CycleFX PRO</h3>
+          <p>
+            Ferramentas para automatizar estratégias no MetaTrader 5. Os produtos atendem traders que operam FIMATHE ou Teoria dos Ciclos.
+          </p>
+        </div>
+        <a
+          class="ecosystem-card__link"
+          href={siteLinks.tradingProducts}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Produtos, planos e licenças <span aria-hidden="true">↗</span>
+        </a>
+      </article>
+
+      <article class="ecosystem-card ecosystem-card--platform">
+        <div class="ecosystem-card__top">
+          <span class="card-index">PLATAFORMAS · ACESSO E SUPORTE</span>
+          <span class="card-arrow" aria-hidden="true">↗</span>
+        </div>
+        <div class="ecosystem-card__main">
+          <div class="ecosystem-card__symbol ecosystem-card__symbol--platform" aria-hidden="true">
+            <svg viewBox="0 0 40 40" fill="none">
+              <rect x="7" y="8" width="26" height="10" rx="3" stroke="currentColor" stroke-width="1.6" />
+              <rect x="7" y="22" width="26" height="10" rx="3" stroke="currentColor" stroke-width="1.6" />
+              <circle cx="13" cy="13" r="1.5" fill="currentColor" />
+              <circle cx="13" cy="27" r="1.5" fill="currentColor" />
+              <path d="M19 13h8M19 27h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+            </svg>
+          </div>
+          <p class="eyebrow eyebrow--small">PLATAFORMAS DO ECOSSISTEMA</p>
+          <h3>Ecossistema &amp; HUB do Parceiro</h3>
+          <p>
+            Na TAPF, consulte produtos, planos e licenças. No HUB, acompanhe licenças e consulte dados, relatórios e suporte.
+          </p>
+        </div>
+        <a
+          class="ecosystem-card__link"
+          href={siteLinks.partnerHub}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Acessar o HUB do Parceiro <span aria-hidden="true">↗</span>
+        </a>
+      </article>
+    </div>
+  </div>
+</section>
