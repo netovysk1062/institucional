@@ -153,13 +153,13 @@ svg {
 }
 
 .scroll-entering {
-  animation: scroll-section-enter 560ms var(--ease) both;
+  animation: scroll-section-enter 680ms var(--ease) var(--reveal-delay, 0ms) both;
 }
 
 @keyframes scroll-section-enter {
   from {
-    opacity: 0.72;
-    transform: translate3d(0, 14px, 0);
+    opacity: 0.42;
+    transform: translate3d(0, 22px, 0);
   }
 
   to {
@@ -737,7 +737,7 @@ svg {
 
 .diagram-core__orbit--outer {
   inset: -9px;
-  animation: diagram-orbit-pulse 5.8s ease-in-out infinite;
+  animation: diagram-orbit-pulse 4.8s ease-in-out infinite;
 }
 
 .diagram-core__orbit--inner {
@@ -748,13 +748,13 @@ svg {
 @keyframes diagram-orbit-pulse {
   0%,
   100% {
-    opacity: 0.58;
+    opacity: 0.42;
     transform: scale(1);
   }
 
   50% {
-    opacity: 0.9;
-    transform: scale(1.045);
+    opacity: 0.92;
+    transform: scale(1.065);
   }
 }
 
