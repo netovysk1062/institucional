@@ -64,7 +64,79 @@ const structuredData = {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#07080a" />
-    <meta name="color-scheme" content="dark" />
+    <meta name="color-scheme" content="light dark" />
+    <script is:inline>
+      (() => {
+        const preferenceKey = "traders-automatizados-theme";
+        const root = document.documentElement;
+        const systemTheme = window.matchMedia("(prefers-color-scheme: dark)");
+        const readPreference = () => {
+          try {
+            const saved = window.localStorage.getItem(preferenceKey);
+            return saved === "light" || saved === "dark" ? saved : "auto";
+          } catch {
+            return "auto";
+          }
+        };
+
+        let preference = readPreference();
+
+        const syncControl = () => {
+          const control = document.getElementById("theme-preference");
+          if (control instanceof HTMLSelectElement) control.value = preference;
+        };
+
+        const applyTheme = () => {
+          const theme = preference === "auto" ? (systemTheme.matches ? "dark" : "light") : preference;
+          root.dataset.theme = theme;
+          root.dataset.themePreference = preference;
+          document.querySelector('meta[name="color-scheme"]')?.setAttribute("content", theme);
+          document
+            .querySelector('meta[name="theme-color"]')
+            ?.setAttribute("content", theme === "dark" ? "#07080a" : "#f4f6f9");
+          syncControl();
+        };
+
+        const setPreference = (nextPreference) => {
+          preference = nextPreference;
+          try {
+            if (preference === "auto") {
+              window.localStorage.removeItem(preferenceKey);
+            } else {
+              window.localStorage.setItem(preferenceKey, preference);
+            }
+          } catch {
+            // The selected mode still applies for this page if storage is unavailable.
+          }
+          applyTheme();
+        };
+
+        applyTheme();
+
+        const followSystemTheme = () => {
+          if (preference === "auto") applyTheme();
+        };
+
+        systemTheme.addEventListener("change", followSystemTheme);
+
+        window.addEventListener("storage", (event) => {
+          if (event.key !== preferenceKey && event.key !== null) return;
+          preference = readPreference();
+          applyTheme();
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+          const control = document.getElementById("theme-preference");
+          if (!(control instanceof HTMLSelectElement)) return;
+          syncControl();
+
+          control.addEventListener("change", () => {
+            const selected = control.value;
+            setPreference(selected === "light" || selected === "dark" ? selected : "auto");
+          });
+        });
+      })();
+    </script>
     <meta name="description" content={description} />
     <meta name="robots" content={robots} />
     <meta name="author" content={siteConfig.name} />

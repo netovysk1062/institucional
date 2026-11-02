@@ -1,0 +1,24 @@
+[
+  {
+    "mode": "light",
+    "reload": "PASS",
+    "crossPage": "/empresa/ PASS"
+  },
+  {
+    "mode": "dark",
+    "reload": "PASS",
+    "crossPage": "/empresa/ PASS"
+  },
+  {
+    "mode": "auto",
+    "storageRemoved": true,
+    "systemChangeLive": "PASS"
+  },
+  {
+    "reducedMotion": {
+      "matches": true,
+      "scroll": "auto",
+      "transition": "1e-05s"
+    }
+  }
+]

@@ -40,6 +40,19 @@ const isCurrentPage = (href: string) => (href.replace(/\/+$/, "") || "/") === cu
             </a>
           </li>
         ))}
+        <li class="site-nav__theme">
+          <label class="theme-preference__label" for="theme-preference">Tema</label>
+          <select
+            class="theme-preference"
+            id="theme-preference"
+            name="theme-preference"
+            aria-label="Preferência de tema"
+          >
+            <option value="auto">Automático</option>
+            <option value="light">Claro</option>
+            <option value="dark">Escuro</option>
+          </select>
+        </li>
         <li class="site-nav__mobile-action">
           <a
             class="button button--primary site-nav__mobile-cta"
