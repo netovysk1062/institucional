@@ -152,6 +152,22 @@ svg {
   padding-block: var(--section-space);
 }
 
+.scroll-entering {
+  animation: scroll-section-enter 560ms var(--ease) both;
+}
+
+@keyframes scroll-section-enter {
+  from {
+    opacity: 0.72;
+    transform: translate3d(0, 14px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
 .skip-link {
   position: fixed;
   z-index: 100;
@@ -721,11 +737,25 @@ svg {
 
 .diagram-core__orbit--outer {
   inset: -9px;
+  animation: diagram-orbit-pulse 5.8s ease-in-out infinite;
 }
 
 .diagram-core__orbit--inner {
   inset: 9px;
   border-color: rgba(48, 32, 160, 0.15);
+}
+
+@keyframes diagram-orbit-pulse {
+  0%,
+  100% {
+    opacity: 0.58;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.9;
+    transform: scale(1.045);
+  }
 }
 
 .diagram-core__logo {
